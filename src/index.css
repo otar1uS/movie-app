@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Work+Sans:wght@400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Work Sans", sans-serif;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #161616;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  border: 1px solid gray;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.slick-prev:hover {
+  background-color: rgba(0, 0, 0, 0.508);
+}
+
+.slick-next:hover {
+  background-color: rgba(0, 0, 0, 0.508);
+}
+
+@media only screen and (min-device-width: 768px) {
+  .slick-prev,
+  .slick-next {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.slick-prev {
+  left: 4rem;
+}
+
+.slick-next {
+  right: 4rem;
+}
+
+.slick-prev-secondary {
+  right: 0rem;
+}
+
+.slick-next-secondary {
+  right: 0rem;
+}
+
+.slick-dots-secondary {
+  display: none;
+}
+
+.slick-dots-secondary li button {
+  display: none;
+}
+.slick-dots {
+  border-radius: 2rem;
+  position: absolute;
+  max-width: 100%;
+
+  bottom: 10rem;
+  display: flex !important;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.slick-dots li {
+  width: 100%;
+  list-style: none;
+  height: 2px;
+  margin: 0;
+}
+
+.slick-dots li button {
+  display: inline-block;
+  border-radius: 1rem;
+  width: 100%;
+  height: 2px;
+  padding: 0;
+  line-height: 0px;
+  background-color: #2424247c;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none;
+  font-size: 2px;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #ffffff6f;
+}
+
+.slick-dots li button:before,
+.slick-dots li.slick-active button::before {
+  color: transparent;
+  height: 2px;
+  display: none;
+}
