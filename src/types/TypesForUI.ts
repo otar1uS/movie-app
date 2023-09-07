@@ -8,10 +8,20 @@ export interface ButtonProps {
   onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-export type actionProps = {
-  type: string;
-  payload?: any;
-};
+export type actionProps =
+  | { type: "movie/isItMovie"; payload: any }
+  | { type: "movie/curUser"; payload: string | null }
+  | { type: "movie/whichOne"; payload: string | null }
+  | { type: "movie/allMovies"; payload: MovieCardProps }
+  | { type: "movie/watching"; payload: MovieCardProps }
+  | { type: "movie/planToWatch"; payload: MovieCardProps }
+  | { type: "movie/completed"; payload: MovieCardProps }
+  | { type: "movie/removeAllMovies"; payload: number }
+  | { type: "movie/removeWatching"; payload: number }
+  | { type: "movie/removePlanToWatch"; payload: number }
+  | { type: "movie/removeCompleted"; payload: number }
+  | { type: "movie/whereToAdd"; payload: string | null }
+  | { type: "movie/movieId"; payload: number | null };
 
 export interface User {
   uid: string;

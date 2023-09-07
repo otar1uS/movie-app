@@ -112,7 +112,10 @@ const MovieReducer = (state: initialStateUiProps, action: actionProps) => {
 };
 
 export default function MovieUiProvider({ children }: MovieProviderProps) {
-  const [state, dispatch] = useReducer(MovieReducer, initialState);
+  const [state, dispatch] = useReducer(
+    MovieReducer as React.Reducer<initialStateUiProps, actionProps>,
+    initialState
+  );
 
   return (
     <MovieUiContext.Provider value={{ state, dispatch }}>
