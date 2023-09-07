@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BiSolidStar } from "react-icons/bi";
 import { useUiState } from "../hooks/useUiState";
 import { toast } from "react-hot-toast";
-function StartRatings({ votes, count }) {
+function StartRatings({ votes, count }: { votes: number; count: number }) {
   const [rating, setRating] = useState<number | null>(null);
   const [hover, setHover] = useState<number | null>(null);
   const { curState } = useUiState();
@@ -29,7 +29,10 @@ function StartRatings({ votes, count }) {
               />
               <BiSolidStar
                 color={
-                  currentRating <= (hover || rating) ? "#00ACC1" : "#ededed"
+                  currentRating <=
+                  (hover !== null ? hover : rating !== null ? rating : 0)
+                    ? "#00ACC1"
+                    : "#ededed"
                 }
                 onMouseEnter={() => setHover(currentRating)}
                 onMouseLeave={() => setHover(null)}

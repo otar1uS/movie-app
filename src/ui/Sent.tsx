@@ -34,7 +34,11 @@ function Sent({ data, shouldWeAddRemove, movieId }: sentProps) {
   };
 
   const whereToSentHandler = () => {
-    if (curState.whereToAdd == "completed" || "planToWatch" || "watching") {
+    if (
+      curState.whereToAdd === "completed" ||
+      curState.whereToAdd === "planToWatch" ||
+      curState.whereToAdd === "watching"
+    ) {
       dispatch({
         type: "movie/allMovies",
         payload: data,

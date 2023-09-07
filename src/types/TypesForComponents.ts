@@ -13,6 +13,9 @@ interface SpokenLanguage {
   iso_639_1: string;
   name: string;
 }
+interface productionCompanies {
+  name: string;
+}
 
 interface Episode {
   id: number;
@@ -69,7 +72,7 @@ export interface Media {
   overview: string;
   popularity: number;
   poster_path: string | null;
-  production_companies: unknown[];
+  production_companies: productionCompanies[];
   production_countries: ProductionCountry[];
   release_date?: string; // Release date is specific to movies
   revenue?: number; // Revenue is specific to movies
